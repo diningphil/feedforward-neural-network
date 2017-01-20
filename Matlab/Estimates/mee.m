@@ -1,0 +1,1 @@
+function loss = mee(O,Y)  N = size(O,1);  d = O-Y;  loss = sum(arrayfun(@(idx) norm(d(idx,:),2), 1:N))/N;  %loss = sum(norm(O-Y,2,'rows'))/N;end
