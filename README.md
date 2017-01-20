@@ -16,6 +16,8 @@ Repository issues:
 
 - Uniform Matlab and Octave implementations.
 
+- Produce a good documentation
+
 - Fix the BUGGY implementation in C++
 
 Technical issues:
