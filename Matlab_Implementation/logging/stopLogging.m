@@ -1,1 +1,0 @@
-function stopLogging()  diary off;end

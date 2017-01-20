@@ -1,1 +1,0 @@
-function g = tanhGradient(x)    g = 1 - tanh(x).^2;  end

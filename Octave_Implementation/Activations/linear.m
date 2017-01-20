@@ -1,1 +1,0 @@
-function o = linear(z)  o = z;end

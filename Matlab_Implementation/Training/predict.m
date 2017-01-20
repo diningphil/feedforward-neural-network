@@ -1,1 +1,0 @@
-function prediction = predict(X, W, W_O, outputActivation, hiddenActivation)  X = [ones(size(X,1), 1) X];   prediction = feedforward(X, W, W_O, outputActivation, hiddenActivation);  end

@@ -1,1 +1,0 @@
-function E = leastMeanSquare(O, Y)  m = size(Y,1);    Delta = Y - O;    E = sum(diag(Delta*Delta'))/(2*m);    end 

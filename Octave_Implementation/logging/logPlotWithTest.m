@@ -1,1 +1,0 @@
-function logPlotWithTest(TR_Err, TR_Acc, nIter, TS_Err, TS_Acc, lossType, alpha, eta, lambda, layers_dims, out_dim, directoryName, fold = 0)  if (fold !=0)    fold = strcat("_fold=", num2str(fold));  else     fold = "";  endif    myPlotWithTest(TR_Err, TR_Acc, nIter, TS_Err, TS_Acc, lossType, alpha, eta, lambda, layers_dims, out_dim, directoryName, fold);end

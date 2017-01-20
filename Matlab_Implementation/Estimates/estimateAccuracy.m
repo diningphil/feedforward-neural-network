@@ -1,1 +1,0 @@
-function A = estimateAccuracy(O, Y)  m = size(Y,1);    A = 0.0;    for i = 1:m    if ( sign(Y(i,1)-0.5) == sign(O(i,1)-0.5))      A = A + 1.0;    end  end    A = A/m;  A = A*100;end 
