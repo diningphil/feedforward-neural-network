@@ -1,0 +1,1 @@
+function g = sigmoid(a, z)  g = 1.0 ./ (1.0 + exp(-a*z));end

@@ -1,0 +1,1 @@
+function g = sigmoidGradient(a, z)      g = sigmoid(a, z).*(1 - sigmoid(a, z))*a; % can be expensive, try also with an approximationend

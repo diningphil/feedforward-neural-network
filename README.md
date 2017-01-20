@@ -2,11 +2,6 @@
 An implementation of a Neural Network simulator based on the theory of the book Rumelhart, McClelland et al 1986 - Parallel Distributed Processing. 
 ### Authors: diningphil and korialis
 
-## TL:DR
-- Octave impl. is the most updated.
-- Matlab impl. will be updated soon.
-- C++ is buggy and need to be fixed
-
 ## What to expect
 The implementation is vectorized (a non-vectorized version exists in Octave folder, and strictly follows the results in the book).
 Notice that this implementation is based on the batch method of learning.
@@ -14,11 +9,7 @@ The list of things to do is organized in this way:
 
 Repository issues:
 
-- Uniform Matlab and Octave implementations.
-
 - Produce a good documentation
-
-- Fix the BUGGY implementation in C++
 
 Technical issues:
 - Try to avoid saturation of the units limiting the response of a neuron; it should be a bit away from the max or min value of the activation function (its gradient becomes 0 and the weights tend to remain unchanged during next iterations)
