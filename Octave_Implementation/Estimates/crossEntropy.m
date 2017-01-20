@@ -1,0 +1,1 @@
+function E = crossEntropy(O, Y)  m = size(Y,1);    Delta = Y - O;    E = sum(sum((-Y.*log(O)-(1-Y).*log(1-O)),2))/m;  end 

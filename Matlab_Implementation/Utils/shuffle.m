@@ -1,0 +1,1 @@
+function [X,Y] = shuffle(X,Y)  % Permute together the rows of both X and Y  m = size(X,1);  n = size(X,2);  T = [X Y];  T = T(randperm(m),:);  X = T(:,1:n);  Y = T(:,n+1:end);end

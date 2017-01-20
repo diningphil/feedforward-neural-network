@@ -1,0 +1,1 @@
+function A = estimateAccuracy(O, Y)  Delta = Y - O;  m = size(Y,1);    A = 0.0;    for i = 1:m    if ( sign(Y(i,1)-0.5) == sign(O(i,1)-0.5))      A += 1.0;    endif  endfor    A /= m;  A *= 100;end 

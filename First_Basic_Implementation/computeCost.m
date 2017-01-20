@@ -1,0 +1,1 @@
+function [E, Delta] = computeCost(O, Y)    Delta = computeDelta(O, Y);    E = (1/2)*sum(diag(Delta*Delta')); %% Is there something better=end

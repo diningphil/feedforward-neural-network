@@ -1,0 +1,1 @@
+function Delta = computeDelta(O, Y)  Delta = Y - O;end
