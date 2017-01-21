@@ -1,4 +1,4 @@
-function [W, W_O, eta_val, alpha_val, lambda_val] = modelSelection_CV(k, X, Y, eta_range, alpha_range, lambda_range, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots, logging)
+function [W, W_O, eta_val, alpha_val, lambda_val] = modelSelection_CV(k, X, Y, eta_range, alpha_range, lambda_range, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, logging)
   
   if nargin < 19
     logging = true;
@@ -59,7 +59,7 @@ function [W, W_O, eta_val, alpha_val, lambda_val] = modelSelection_CV(k, X, Y, e
             fprintf('##### FOLD %f #####\n', f);
             
             %# Select the function that minimize error on TR for these hyperparam. AND for these folders (--> set threshold to 0)
-            [TR_Err, TR_Acc, nIter, W, W_O, out_hidden, TS_Err, TS_Acc] = trainWithValidation(Dtr, Ytr, Dk, Yk, e_h, l_h, a_h, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots);
+            [TR_Err, TR_Acc, nIter, W, W_O, out_hidden, TS_Err, TS_Acc] = trainWithValidation(Dtr, Ytr, Dk, Yk, e_h, l_h, a_h, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn);
             
             if(logging)
               logPlotWithTest(TR_Err, TR_Acc, nIter, TS_Err, TS_Acc, lossType, a_h, e_h, l_h, layers_dims, size(Y,2), logDir, f);
@@ -111,7 +111,7 @@ function [W, W_O, eta_val, alpha_val, lambda_val] = modelSelection_CV(k, X, Y, e
   std_val
   fprintf('Training the selected model (eta=%f, alpha=%f, lambda=%f): \n', eta_val, alpha_val, lambda_val);
   % Return the selected model
-  [TR_Err, TR_Acc, nIter, W, W_O] = train(X, Y, eta_val, lambda_val, alpha_val, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots);
+  [TR_Err, TR_Acc, nIter, W, W_O] = train(X, Y, eta_val, lambda_val, alpha_val, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn);
   
   fprintf('##### CV ENDS #####\n');
   if (logging)

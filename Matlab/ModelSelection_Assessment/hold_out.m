@@ -1,4 +1,4 @@
-function [estimation, accuracy, W, W_O, eta_val, alpha_val, lambda_val] = hold_out(X, Y, trainPerc, valPerc, h_eta, h_alpha, h_lambda, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots, logging)
+function [estimation, accuracy, W, W_O, eta_val, alpha_val, lambda_val] = hold_out(X, Y, trainPerc, valPerc, h_eta, h_alpha, h_lambda, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn logging)
 
   if nargin < 20
     logging = true;
@@ -49,7 +49,7 @@ function [estimation, accuracy, W, W_O, eta_val, alpha_val, lambda_val] = hold_o
       for l_h = h_lambda
           fprintf('##### (Eta=%f, Alpha=%f, Lambda=%f) BEGINS #####\n', e_h, a_h, l_h);
           % Select the function that minimize error on TR for these hyperparam. --> set threshold to 0
-          [TR_Err, TR_Acc, nIter, Wres, W_O_res, output_hidden_units, TS_a, TS_b] = trainWithValidation(Xtrain, Ytrain, Xval, Yval, e_h, l_h, a_h, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots);
+          [TR_Err, TR_Acc, nIter, Wres, W_O_res, output_hidden_units, TS_a, TS_b] = trainWithValidation(Xtrain, Ytrain, Xval, Yval, e_h, l_h, a_h, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn);
           
            if(logging)
               logPlotWithTest(TR_Err, TR_Acc, nIter, TS_a, TS_b, lossType, a_h, e_h, l_h, layers_dims, size(Y,2), logDir);
@@ -79,7 +79,7 @@ function [estimation, accuracy, W, W_O, eta_val, alpha_val, lambda_val] = hold_o
   fprintf('##### SELECTED MODEL #####\n\n');
   fprintf('Training the selected model (eta=%f, alpha=%f, lambda=%f): \n', eta_val, alpha_val, lambda_val);
   % Model Assessment
-  [TR_Err, TR_Acc, nIter, W, W_O] = train([Xtrain; Xval],[Ytrain; Yval], eta_val, lambda_val, alpha_val, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn, showPlots);
+  [TR_Err, TR_Acc, nIter, W, W_O] = train([Xtrain; Xval],[Ytrain; Yval], eta_val, lambda_val, alpha_val, outputActivationType, hiddenActivationType, lossType, estimateFunction, threshold, init_range, maxIter, layers_dims, runs, useAnnealing, useFanIn);
   
   [estimation,accuracy] = modelAssessment(W, W_O, Xtest, Ytest, outputActivation, hiddenActivation, lossFunction, estimateFunction);
   

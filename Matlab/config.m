@@ -32,5 +32,3 @@ hiddenActivation = 'tanh';
 % Number of runs
 runs = 1;
 
-usePlot = true;
-

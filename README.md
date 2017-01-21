@@ -12,6 +12,10 @@ Repository issues:
 - Produce a good documentation
 
 Technical issues:
+
+- Training selects the "best" over a number of runs; best can be less error or max accuracy. So it needs to be able to discriminate, on the basis of the performance measure.
+
+
 - Try to avoid saturation of the units limiting the response of a neuron; it should be a bit away from the max or min value of the activation function (its gradient becomes 0 and the weights tend to remain unchanged during next iterations)
 
 ## Not strictly necessary
