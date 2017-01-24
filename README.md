@@ -1,4 +1,4 @@
-# NNSimulator
+# Feedforward Neural Network
 An implementation of a Neural Network simulator based on the theory of the book Rumelhart, McClelland et al 1986 - Parallel Distributed Processing. 
 ### Authors: diningphil and korialis
 
