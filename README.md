@@ -3,7 +3,7 @@ An implementation of a Neural Network simulator based on the theory of the book 
 ### Authors: diningphil and korialis
 
 ## What to expect
-The implementation is vectorized (a non-vectorized version exists in Octave folder, and strictly follows the results in the book).
+The implementation is vectorized (a non-vectorized version in Octave exists in a separate folder, and strictly follows the results in the book).
 Notice that this implementation is based on the batch method of learning.
 The list of things to do is organized in this way:
 
