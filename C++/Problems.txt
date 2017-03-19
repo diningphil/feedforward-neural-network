@@ -1,5 +1,0 @@
-1) Cannot initialize the matrices in an arbitrary range. It seems there are no functions in armadillo for that.
-
-2) Cross entropy cost function.... what does sum on Octave also? It returns a vector, not a number!
-
-3) Controllare l'intervallo quando si usa cols ( ..... 1, n_cols - 1 )
